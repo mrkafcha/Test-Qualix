@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import './index.css'
-import store from "./ entities/store.ts";
+import { store } from "./ entities/store.ts";
 import {RouterProvider} from "react-router-dom";
 import {router} from "./app/router.tsx";
 
 const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+    throw new Error('Root element was not found');
+}
 
 ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>

@@ -1,6 +1,6 @@
 import {Button} from "./Button.tsx";
 
-export const Modal = ({ onClose ,children }) => {
+export const Modal = ({ onClose ,children }: any) => {
     return (
         <div className="modal-overlay" role="dialog" aria-modal="true">
             <div className="modal-content">

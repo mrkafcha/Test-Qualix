@@ -5,12 +5,14 @@ import {useState} from "react";
 import {Modal} from "../../../shared/Modal.tsx";
 import {RequestForm} from "../../../widgets/request-form/RequestForm.tsx";
 import { deleteRequests, updateRequest } from "../../../ entities/requestsSlice.ts";
+import type {RootState} from "../../../ entities/store.ts";
+import type {RequestAdd} from "../../../ entities/model/request-type.ts";
 
 export const RequestDetails = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { id } = useParams()
-    const request = useSelector((state) => state.requests.requests.find((item) => item.id === id));
+    const request = useSelector((state: RootState) => state.requests.requests.find((item: any) => item.id === id));
     const [modalShow, setModalShow] = useState(false);
     const initialValues = {
         heading: request.heading,
@@ -19,7 +21,7 @@ export const RequestDetails = () => {
     }
     // console.log(request)
 
-    const handleEditSubmit = (changes) => {
+    const handleEditSubmit = (changes: RequestAdd) => {
         // console.log(changes)
         dispatch(updateRequest({ id:request.id, changes }));
         setModalShow(false);
@@ -40,8 +42,8 @@ export const RequestDetails = () => {
             </div>
             <div className="page-card">
                 <div className="page-basic">
-                    {request.category}
-                    {request.dateCreation}
+                    <div><strong>Категория:</strong> {request.category}</div>
+                    <div><strong>Дата создания:</strong> {request.dateCreation}</div>
                 </div>
                 <p>{request.description}</p>
                 <div>

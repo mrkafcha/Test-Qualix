@@ -1,6 +1,7 @@
 import {categoryList} from "../../shared/model/category-list.ts";
 import {Button} from "../../shared/Button.tsx";
 import {useState} from "react";
+import type { FormEvent } from "react";
 import './ui/form.css'
 
 const defaultValues = {
@@ -9,15 +10,17 @@ const defaultValues = {
     category: 'Инструменты'
 ,}
 
-export const RequestForm = ({initialValues, descriptionButton = "Сохранить", onSubmit}) => {
+
+
+export const RequestForm = ({initialValues, descriptionButton = "Сохранить", onSubmit }: any) => {
     const [values, setValues] = useState({ ...defaultValues, ...initialValues });
     // console.log(values)
 
-    const handleChange = (key, value) => {
-        setValues((prev) => ({...prev, [key]: value}))
+    const handleChange = (key: string, value: string) => {
+        setValues((prev: any) => ({...prev, [key]: value}))
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
         onSubmit({
             heading: values.heading,

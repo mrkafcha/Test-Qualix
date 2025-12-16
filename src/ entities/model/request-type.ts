@@ -5,3 +5,12 @@ export type RequestType = {
     dateCreation: string,
     category: string,
 }
+export type RequestAdd = {
+    heading: string,
+    description: string,
+    category: string,
+}
+
+export type RequestsState = {
+    requests: RequestType[];
+}

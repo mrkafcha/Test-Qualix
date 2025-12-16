@@ -27,7 +27,7 @@ const requestsSlice = createSlice({
             const { id, changes } = action.payload
             // Меняется заголовок, описание, категория
             // Найти нужную заявку
-            const index = state.requests.findIndex((item) => item.id === id);
+            const index = state.requests.findIndex((item: RequestType) => item.id === id);
             // С помощью деструкт изменяем нужную заявку
             state.requests[index] = {...state.requests[index], ...changes};
             // Сохраняем в LocalStorage
@@ -36,7 +36,7 @@ const requestsSlice = createSlice({
         deleteRequests(state, action) {
             // Удаляет заявку по айди с помощью фильтра массива
             const { id } = action.payload;
-            state.requests = state.requests.filter((req) => req.id !== id)
+            state.requests = state.requests.filter((req: RequestType) => req.id !== id)
             // Сохраняем в LocalStorage
             saveState(state);
         }
