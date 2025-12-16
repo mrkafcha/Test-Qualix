@@ -1,3 +1,3 @@
 # Демонстрация
 
-### [Тестовое задание](https://mrkafcha.github.io/Test-Qualix/requests)
+### [Тестовое задание](https://mrkafcha.github.io/Test-Qualix/)
