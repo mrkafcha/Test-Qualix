@@ -1,0 +1,26 @@
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form_field {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #1a1a1a;
+    background: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    color: #1a1a1a;
+}
+
+.form_option {
+    color: #1a1a1a;
+}
+
+.form_field:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
